@@ -1,11 +1,8 @@
-import sbtassembly.Plugin._
-import AssemblyKeys._
-
 name := "learning-scala2"
 
 version := "0.0.1"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.12.4"
 
 organization := "com.github.tanacasino"
 
@@ -20,21 +17,22 @@ scalacOptions ++= (
 )
 
 shellPrompt := { state =>
+  import scala.sys.process._
   val branch = if(file("../.git").exists){
-    "git branch".lines_!.find{_.head == '*'}.map{_.drop(1)}.getOrElse("")
+    "git branch".lineStream_!.find{_.head == '*'}.map{_.drop(1)}.getOrElse("")
   } else ""
   s"[${scala.Console.CYAN}${Project.extract(state).currentRef.project}${scala.Console.RESET} :${scala.Console.GREEN}$branch${scala.Console.RESET}] " + "$ "
 }
 
 libraryDependencies ++= {
   Seq(
-   "org.scalatest"  % "scalatest_2.11" % "2.2.1" % "test"
+    "org.scalatest" %% "scalatest" % "3.0.5" % Test
   )
 }
+//
+//resolvers ++= Seq(
+//  "snapshots"     at "http://oss.sonatype.org/content/repositories/snapshots",
+//  "releases"      at "http://oss.sonatype.org/content/repositories/releases"
+//)
 
-resolvers ++= Seq(
-  "snapshots"     at "http://oss.sonatype.org/content/repositories/snapshots",
-  "releases"      at "http://oss.sonatype.org/content/repositories/releases"
-)
 
-assemblySettings
