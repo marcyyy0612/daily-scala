@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Day16 Scala Object 05 · GitBook</title>
+        <title>Day12 Scala Object 01 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../trait/trait_day_01.html" />
+    <link rel="next" href="object_day_02.html" />
     
     
-    <link rel="prev" href="object_day_04.html" />
+    <link rel="prev" href="../collection/collection_day_09.html" />
     
 
     </head>
@@ -245,7 +245,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="object_day_01.html">
+        <li class="chapter active" data-level="1.13" data-path="object_day_01.html">
             
                 <a href="object_day_01.html">
             
@@ -297,7 +297,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.17" data-path="object_day_05.html">
+        <li class="chapter " data-level="1.17" data-path="object_day_05.html">
             
                 <a href="object_day_05.html">
             
@@ -366,7 +366,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Day16 Scala Object 05</a>
+        <a href=".." >Day12 Scala Object 01</a>
     </h1>
 </div>
 
@@ -381,37 +381,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="scala-object-day-05">Scala Object Day 05</h1>
+                                <h1 id="scala-object-day-01">Scala Object Day 01</h1>
 <h2 id="today">Today</h2>
 <ul>
-<li>case class&#x3092;&#x4F7F;&#x3063;&#x3066;&#x7C21;&#x6613;BTree&#x3092;&#x4F5C;&#x308D;&#x3046;<ul>
-<li><a href="https://gist.github.com/j5ik2o/7332812" target="_blank">https://gist.github.com/j5ik2o/7332812</a></li>
-<li>BTree &#x306E;&#x304A;&#x307E;&#x3051;</li>
+<li>class&#x3068;object&#x306E;&#x57FA;&#x672C;<ul>
+<li>class</li>
+<li>object</li>
+<li>&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</li>
+<li>&#x62BD;&#x51FA;&#x5B50;(Extractor)</li>
 </ul>
 </li>
 </ul>
-<h2 id="case-class-&#x4F8B;&#x984C;">case class &#x4F8B;&#x984C;</h2>
+<h2 id="classobject-&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;">class/object &#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h2>
 <ul>
-<li>&#x6728;&#x69CB;&#x9020;&#x306E;&#x518D;&#x5E30;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6271;&#x3046;&#x306E;&#x306B;&#x975E;&#x5E38;&#x306B;&#x5F79;&#x7ACB;&#x3064; by &#x30B3;&#x30C3;&#x30D7;&#x672C;</li>
-<li>&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x7C21;&#x5358;&#x306A; BTree &#x3092;&#x4F5C;&#x308D;&#x3046;&#xFF01;</li>
-<li><a href="https://gist.github.com/j5ik2o/7332812" target="_blank">https://gist.github.com/j5ik2o/7332812</a></li>
-<li>&#x307E;&#x305A;&#x306F; 0 &#x756A;&#x3092;&#x89E3;&#x3053;&#x3046;&#xFF01;</li>
-<li>&#x6B21;&#x306B;1</li>
-<li>max</li>
-<li>min</li>
-<li>sum</li>
-<li>avg</li>
-<li>find</li>
-<li>&#x4F59;&#x88D5;&#x304C;&#x3042;&#x308B;&#x4EBA;&#x306F; List&#x304B;&#x3089;BTree&#x3092;&#x4F5C;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;</li>
+<li>&#x7C21;&#x5358;&#x306A;&#x8AAC;&#x660E;&#x3068;&#x3068;&#x3082;&#x306B;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x898B;&#x306A;&#x304C;&#x3089;&#x89E3;&#x8AAC;</li>
+<li><a href="https://github.com/tanacasino/learning-scala/commit/fb320f7728426a8d251e3f12027bd86211a8d58b" target="_blank">https://github.com/tanacasino/learning-scala/commit/fb320f7728426a8d251e3f12027bd86211a8d58b</a></li>
 </ul>
-<h2 id="btree-&#x306E;&#x304A;&#x307E;&#x3051;">BTree &#x306E;&#x304A;&#x307E;&#x3051;</h2>
+<h2 id="class">class</h2>
 <ul>
-<li>List&#x304B;&#x3089;BTree&#x3092;&#x4F5C;&#x3063;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x306A;&#xFF01;</li>
-<li>&#x4ECA;&#x56DE;&#x306E;BTree&#x306F;1,3,7,15,31,..&#x306E;&#x6570;&#x3057;&#x304B;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x306E;&#x3067;&#x305D;&#x308C;&#x3067;OK&#x3067;&#x3059;</li>
+<li>class &#x306F; Java&#x306E;class&#x3068;&#x57FA;&#x672C;&#x540C;&#x3058;</li>
+<li>&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;&#x3057;&#x3066;&#x4F7F;&#x3046;</li>
+<li>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x304C;&#x3061;&#x3087;&#x3044;&#x304D;&#x3082;&#x3044;</li>
+<li>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x4EE5;&#x5916;&#x306F;this</li>
+<li>static &#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x4F5C;&#x308C;&#x306A;&#x3044;</li>
+</ul>
+<h2 id="object">object</h2>
+<ul>
+<li>&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x306A;&#x308B;</li>
+<li>static &#x306A;&#x30E1;&#x30F3;&#x30D0;&#x30FC;&#xFF08;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x30FB;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#xFF09;</li>
+<li>&#x5B9A;&#x6570;</li>
+<li>XXXUtils.java &#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;</li>
+<li>&#x540D;&#x524D;&#x7A7A;&#x9593;&#x3092;&#x4F5C;&#x308B;&#x306E;&#x306B;&#x3082;&#x4F7F;&#x3046;<ul>
+<li>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5316;&#x306E;&#x5F79;&#x5272;</li>
+<li>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;import&#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;">&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h2>
+<ul>
+<li>class&#x3068;&#x540C;&#x540D;&#x306E;object&#x3092;&#x540C;&#x3058;&#x30BD;&#x30FC;&#x30B9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5BA3;&#x8A00;</li>
+<li>&#x4E3B;&#x306B;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x3068;&#x3057;&#x3066;&#x4F7F;&#x3046;</li>
+<li>apply&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x304A;&#x304A;&#x3044;</li>
+<li>&#x7701;&#x7565;&#x8A18;&#x6CD5;&#x30EB;&#x30FC;&#x30EB;&#x306B;&#x3088;&#x308A; apply&#x306F;&#x547C;&#x3073;&#x51FA;&#x3057;&#x306E;&#x7701;&#x7565;&#x304C;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;</li>
+<li>&#x95A2;&#x6570;&#x30AF;&#x30E9;&#x30B9;&#x306E;apply&#x7701;&#x7565;&#x3092;&#x601D;&#x3044;&#x51FA;&#x3059; <a href="https://gist.github.com/gakuzzzz/10104162" target="_blank">https://gist.github.com/gakuzzzz/10104162</a></li>
+<li>private &#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x4F7F;&#x7528;&#x3092;&#x5F37;&#x5236;&#x3067;&#x304D;&#x308B;</li>
+<li>&#x304A;&#x4E92;&#x3044;&#x306E;&#x30D7;&#x30E9;&#x30A4;&#x30D9;&#x30FC;&#x30C8;&#x30E1;&#x30F3;&#x30D0;&#x30FC;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+<h2 id="&#x62BD;&#x51FA;&#x5B50;-extractor">&#x62BD;&#x51FA;&#x5B50; Extractor</h2>
+<ul>
+<li>class&#x3092;&#x5206;&#x89E3;&#x3057;&#x3066;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x62BD;&#x51FA;&#x3059;&#x308B;</li>
+<li>&#x30BF;&#x30D7;&#x30EB;&#x306B;&#x5206;&#x89E3;&#x3059;&#x308B;</li>
+<li>&#x5909;&#x6570;&#x306B;&#x5206;&#x89E3;&#x3057;&#x3066;&#x7A81;&#x3063;&#x8FBC;&#x3081;&#x308B;</li>
+<li>pattern match&#x3067;&#x4F7F;&#x3048;&#x308B;</li>
+<li>&#x4FBF;&#x5229;</li>
+<li>&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;unapply&#x3067;&#x5B9F;&#x88C5;&#x3059;&#x308B;</li>
+</ul>
+<h2 id="&#x307E;&#x3068;&#x3081;">&#x307E;&#x3068;&#x3081;</h2>
+<ul>
+<li>&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;class&#x3068;&#x540C;&#x540D;&#x306E;object&#x306E;&#x3053;&#x3068;</li>
+<li>&#x540C;&#x3058;&#x30BD;&#x30FC;&#x30B9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x66F8;&#x304B;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;<ul>
+<li>sealed + case class Pattern&#x3082;&#x540C;&#x3058;</li>
+<li>Scala&#x3067;&#x306F;&#x3088;&#x304F;&#x3042;&#x308B;&#x3053;&#x3068;</li>
+</ul>
+</li>
+<li>unapply&#x4F7F;&#x3063;&#x3066;&#x62BD;&#x51FA;&#x5B50;&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3068;Pattern Match&#x7B49;&#x306E;Scala&#x6D41;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x76F8;&#x6027;&#x304C;&#x3088;&#x3044;</li>
+<li>&#x305F;&#x3060;&#x306E; bean &#x3063;&#x307D;&#x3044;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x3053;&#x308C;&#x4F5C;&#x308B;&#x306E;&#x306F;&#x9762;&#x5012;</li>
+<li>&#x6B21;&#x56DE;: &#x305D;&#x3053;&#x3067; case class &#x3067;&#x3059;&#x3088;</li>
 </ul>
 <h2 id="next">Next</h2>
+<ul>
+<li>case class &#x518D;&#x5165;&#x9580;</li>
+</ul>
 <hr>
-<p><a href="../dayly_scala_summary.md">Daily Scala Summary&#x3078;</a></p>
+<p><a href="object_day_02.html">Scala Object Day 02&#x3078;</a></p>
 
                                 
                                 </section>
@@ -439,12 +481,12 @@
 
             
                 
-                <a href="object_day_04.html" class="navigation navigation-prev " aria-label="Previous page: Day15 Scala Object 04">
+                <a href="../collection/collection_day_09.html" class="navigation navigation-prev " aria-label="Previous page: Day11 Scala Collection API 09">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../trait/trait_day_01.html" class="navigation navigation-next " aria-label="Next page: Day17 Scala Trait 01">
+                <a href="object_day_02.html" class="navigation navigation-next " aria-label="Next page: Day13 Scala Object 02">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -455,7 +497,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Day16 Scala Object 05","level":"1.17","depth":1,"next":{"title":"Day17 Scala Trait 01","level":"1.18","depth":1,"path":"trait/trait_day_01.md","ref":"trait/trait_day_01.md","articles":[]},"previous":{"title":"Day15 Scala Object 04","level":"1.16","depth":1,"path":"object/object_day_04.md","ref":"object/object_day_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"object/object_day_05.md","mtime":"2018-06-14T01:11:36.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-15T11:58:50.765Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Day12 Scala Object 01","level":"1.13","depth":1,"next":{"title":"Day13 Scala Object 02","level":"1.14","depth":1,"path":"object/object_day_02.md","ref":"object/object_day_02.md","articles":[]},"previous":{"title":"Day11 Scala Collection API 09","level":"1.12","depth":1,"path":"collection/collection_day_09.md","ref":"collection/collection_day_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"object/object_day_01.md","mtime":"2018-06-14T01:11:36.578Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-15T12:14:19.409Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -463,10 +505,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
