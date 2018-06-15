@@ -1,0 +1,514 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Day18 Scala Trait 02 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="trait_day_01.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../wordcount/wordcount_day_01.html">
+            
+                <a href="../wordcount/wordcount_day_01.html">
+            
+                    
+                    Day1 Word Count 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../wordcount/wordcount_day_02.html">
+            
+                <a href="../wordcount/wordcount_day_02.html">
+            
+                    
+                    Day2 Word Count 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../collection/collection_day_01.html">
+            
+                <a href="../collection/collection_day_01.html">
+            
+                    
+                    Day3 Scala Collection API 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../collection/collection_day_02.html">
+            
+                <a href="../collection/collection_day_02.html">
+            
+                    
+                    Day4 Scala Collection API 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../collection/collection_day_03.html">
+            
+                <a href="../collection/collection_day_03.html">
+            
+                    
+                    Day5 Scala Collection API 03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../collection/collection_day_04.html">
+            
+                <a href="../collection/collection_day_04.html">
+            
+                    
+                    Day6 Scala Collection API 04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../collection/collection_day_05.html">
+            
+                <a href="../collection/collection_day_05.html">
+            
+                    
+                    Day7 Scala Collection API 05
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../collection/collection_day_06.html">
+            
+                <a href="../collection/collection_day_06.html">
+            
+                    
+                    Day8 Scala Collection API 06
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../collection/collection_day_07.html">
+            
+                <a href="../collection/collection_day_07.html">
+            
+                    
+                    Day9 Scala Collection API 07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../collection/collection_day_08.html">
+            
+                <a href="../collection/collection_day_08.html">
+            
+                    
+                    Day10 Scala Collection API 08
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../collection/collection_day_09.html">
+            
+                <a href="../collection/collection_day_09.html">
+            
+                    
+                    Day11 Scala Collection API 09
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../object/object_day_01.html">
+            
+                <a href="../object/object_day_01.html">
+            
+                    
+                    Day12 Scala Object 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../object/object_day_02.html">
+            
+                <a href="../object/object_day_02.html">
+            
+                    
+                    Day13 Scala Object 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../object/object_day_03.html">
+            
+                <a href="../object/object_day_03.html">
+            
+                    
+                    Day14 Scala Object 03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../object/object_day_04.html">
+            
+                <a href="../object/object_day_04.html">
+            
+                    
+                    Day15 Scala Object 04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../object/object_day_05.html">
+            
+                <a href="../object/object_day_05.html">
+            
+                    
+                    Day16 Scala Object 05
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="trait_day_01.html">
+            
+                <a href="trait_day_01.html">
+            
+                    
+                    Day17 Scala Trait 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.19" data-path="trait_day_02.html">
+            
+                <a href="trait_day_02.html">
+            
+                    
+                    Day18 Scala Trait 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Day18 Scala Trait 02</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="scala-trait-day-02">Scala Trait Day 02</h1>
+<h2 id="today">Today</h2>
+<ul>
+<li>&#x5206;&#x6570;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x308B;</li>
+<li>&#x5206;&#x6570;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6BD4;&#x8F03;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;</li>
+<li>&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x3092;trait&#x306B;&#x3059;&#x308B;</li>
+</ul>
+<h2 id="&#x5206;&#x6570;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x308B;">&#x5206;&#x6570;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x308B;</h2>
+<ul>
+<li>&#x5206;&#x5B50;&#x3068;&#x5206;&#x6BCD;&#x3092;&#x57FA;&#x672C;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3067;&#x53D7;&#x3051;&#x53D6;&#x308B;</li>
+<li>&#x5206;&#x5B50;&#x3068;&#x5206;&#x6BCD;&#x306F;Int&#x3067;</li>
+<li>class&#x540D;&#x306F; Rational&#x3067;</li>
+<li>&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x8DB3;&#x3057;&#x7B97;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF08;&#x9811;&#x5F35;&#x3089;&#x306A;&#x3044;&#x5B9F;&#x88C5;&#x3067;&#xFF57;&#xFF09;</li>
+<li>Rational(1, 3)  // &#xFF13;&#x5206;&#x306E;&#xFF11;</li>
+<li>Rational(1, 3) + Rational(1, 3)<ul>
+<li>== Rational(2, 3)</li>
+</ul>
+</li>
+<li>denominator</li>
+<li>numerator</li>
+</ul>
+<h2 id="&#x5206;&#x6570;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6BD4;&#x8F03;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;">&#x5206;&#x6570;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6BD4;&#x8F03;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;</h2>
+<ul>
+<li>&lt;</li>
+<li>&gt;</li>
+<li>&lt;=</li>
+<li><blockquote>
+<p>=</p>
+</blockquote>
+</li>
+<li>Boolean&#x3092;&#x8FD4;&#x3059;</li>
+<li>Rational(1, 3) &lt; Rational(1, 2)<ul>
+<li>true</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x3092;trait&#x306B;&#x3059;&#x308B;">&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x3092;trait&#x306B;&#x3059;&#x308B;</h2>
+<ul>
+<li>&#x307E;&#x305A;&#x306F;Java&#x98A8;&#x306B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3060;&#x3051;&#x629C;&#x304D;&#x51FA;&#x3059;</li>
+<li>&#x305D;&#x306E;&#x5F8C;&#x306F;trait&#x3067;&#x3044;&#x3044;&#x611F;&#x3058;&#x306B;&#x3059;&#x308B;</li>
+</ul>
+<h2 id="next">Next</h2>
+<ul>
+<li>&#x6B21;&#x306E;&#x30CD;&#x30BF;<ul>
+<li>trait&#x306E;&#x7D9A;&#x304D;</li>
+<li>trait&#x306E;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x7684;&#x306A;&#x6982;&#x8981;</li>
+<li>&#x30EA;&#x30C3;&#x30C1;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x5199;&#x7D4C;</li>
+<li>Stackable Trait&#x306E;&#x5199;&#x7D4C;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a href="trait_day_03.md">Scala Trait Day 03&#x3078;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="trait_day_01.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Day17 Scala Trait 01">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Day18 Scala Trait 02","level":"1.19","depth":1,"previous":{"title":"Day17 Scala Trait 01","level":"1.18","depth":1,"path":"trait/trait_day_01.md","ref":"trait/trait_day_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"trait/trait_day_02.md","mtime":"2018-06-14T01:11:36.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-15T11:58:50.765Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

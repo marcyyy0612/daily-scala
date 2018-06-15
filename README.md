@@ -38,4 +38,4 @@ Scalaっぽいコードが書けるようになろう。
 ※現実問題を解く場合には妥協点があるので実際のプロジェクトでは例外があります。
 
 ----
-[Daily Scala Summaryへ](doc/dayly_scala_summary.md)
+[Daily Scala Summaryへ](gitbook/dayly_scala_summary.md)

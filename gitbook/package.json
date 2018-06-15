@@ -1,0 +1,12 @@
+{
+  "name": "daily-scala-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gitbook build"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}
