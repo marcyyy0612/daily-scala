@@ -1,8 +1,8 @@
 package com.github.study.btree
 
 /**
- * Created by shintaro.tamaki on 2015/10/29.
- */
+  * Created by shintaro.tamaki on 2015/10/29.
+  */
 sealed trait Node {
   def size: Int
 }
@@ -11,7 +11,7 @@ case class Leaf(value: Int) extends Node {
   def size: Int = ???
 }
 
-case class Branch(left:  Node, value: Int, right: Node) extends Node {
+case class Branch(left: Node, value: Int, right: Node) extends Node {
   def size: Int = ???
 }
 
@@ -26,4 +26,3 @@ case class BTree(node: Node) {
 object BTree {
   def apply(list: List[Int]): BTree = ???
 }
-

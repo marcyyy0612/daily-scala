@@ -1,17 +1,16 @@
 package com.github.study.wordcount
 
 /**
- * Created by tamaki on 2015/02/08.
- */
+  * Created by tamaki on 2015/02/08.
+  */
 class WordCount {
 
   //------------------------------------------------------
   // ワードカウント問題
   // https://gist.github.com/j5ik2o/7210762
   //------------------------------------------------------
-  def countFruitsFromLines(lines: List[String]): Map[String, Int] = {
+  def countFruitsFromLines(lines: List[String]): Map[String, Int] =
     ???
-  }
 
 //  /**
 //   * 勉強会をやる発端となったダメコード

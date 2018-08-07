@@ -1,8 +1,8 @@
 package com.github.study.sample
 
 /**
- * Created by tamaki on 2015/02/08.
- */
+  * Created by tamaki on 2015/02/08.
+  */
 object SampleMain {
 
   def main(args: Array[String]): Unit = {
@@ -20,17 +20,16 @@ object SampleMain {
     println(sampleCase(1.5f))
   }
 
-  def sample (num: Int = 1) {
+  def sample(num: Int = 1) {
     println(s"num=[$num]")
   }
 
-  def sampleCase (in: Any) : String = {
+  def sampleCase(in: Any): String =
     in match {
       case x: String => s"String=[$x]"
       case y: Int    => s"Int=[${y.toString}]"
       case z: Long   => s"Long=[${z.toString}]"
-      case _  => "Any"
+      case _         => "Any"
     }
-  }
 
 }

@@ -1,14 +1,13 @@
 package com.github.study.sample
 
 /**
- * Created by shintaro.tamaki on 2015/10/30.
- */
+  * Created by shintaro.tamaki on 2015/10/30.
+  */
 sealed abstract class Expr
 case class Var(name: String) extends Expr
 case class Number(num: Double) extends Expr
 case class UnOp(operator: String, arg: Expr) extends Expr
 case class BinOp(operator: String, left: Expr, right: Expr) extends Expr
-
 
 object ExprMain {
   def main(args: Array[String]) {
@@ -30,11 +29,10 @@ object ExprMain {
     println(simpleExpr)
   }
 
-
   def simplifyExpr(expr: Expr): Expr = expr match {
-    case UnOp("-", UnOp("-", value)) => value
+    case UnOp("-", UnOp("-", value))  => value
     case BinOp("+", value, Number(0)) => value
     case BinOp("*", value, Number(1)) => value
-    case _ => expr
+    case _                            => expr
   }
 }

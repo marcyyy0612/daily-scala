@@ -9,10 +9,10 @@ class RationalSpec extends FunSpec with Matchers {
       it("should returns new rational") {
         val x = Rational(1, 3)
         val y = Rational(1, 3)
-        x + y should be (Rational(2, 3))
+        x + y should be(Rational(2, 3))
       }
     }
-    
+
     describe("compare") {
       it("should compare rational") {
         val x = Rational(1, 3)
