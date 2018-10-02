@@ -10,90 +10,102 @@ trait NNP10 {
     list.foldLeft(0) {
         (h, t) => t
     }
-//     list match {
-//       case Nil      => throw new Exception
-//       case h :: Nil => h
-//       case h :: t   => last(t)
-//     }
+    //     list match {
+    //       case Nil      => throw new Exception
+    //       case h :: Nil => h
+    //       case h :: t   => last(t)
+    // }
 
   // P02 (*) Find the last but one element of a list.
   def penultimate(list: List[Int]): Int =
-    list.foldLeft(0) {
-        (h, t) => t
-    }
+      ???
     // list match {
     //   case Nil           => throw new Exception
     //   case h :: t :: Nil => h
     //   case h :: t        => penultimate(t)
     // }
 
-  def nth(n: Int, list: List[Int]): Int =
-    list match {
-      case Nil      => throw new Exception
-      case h :: Nil => h
-      case h :: t =>
-        n match {
-          case 0 => h
-          case _ => nth(n - 1, t)
-        }
+  def nth(n: Int, list: List[Int]): Int = 
+    list.foldLeft(0) {
+        (acc, n) => 
     }
+    // list match {
+    //   case Nil      => throw new Exception
+    //   case h :: Nil => h
+    //   case h :: t =>
+    //     n match {
+    //       case 0 => h
+    //       case _ => nth(n - 1, t)
+    //     }
+    // }
 
   def length(list: List[Int]): Int = {
-    def _length(_list: List[Int], count: Int): Int =
-      _list match {
-        case Nil      => throw new Exception
-        case h :: Nil => count + 1
-        case h :: t   => _length(t, count + 1)
-      }
-    _length(list, 0)
+    list.foldLeft(0) {
+        (acc, n) => acc + 1
+    }
+  //   def _length(_list: List[Int], count: Int): Int =
+  //     _list match {
+  //       case Nil      => throw new Exception
+  //       case h :: Nil => count + 1
+  //       case h :: t   => _length(t, count + 1)
+  //     }
+  //   _length(list, 0)
   }
 
   def reverse(list: List[Int]): List[Int] = {
-    def _reverse(_list: List[Int], revList: List[Int]): List[Int] =
-      _list match {
-        case Nil      => throw new Exception
-        case h :: Nil => h :: revList
-        case h :: t   => _reverse(t, h :: revList)
-      }
-    _reverse(list, List())
+    list.foldLeft(List.empty[Int]) {
+        (acc, n) => n :: acc
+    }
   }
+  //   def _reverse(_list: List[Int], revList: List[Int]): List[Int] =
+  //     _list match {
+  //       case Nil      => throw new Exception
+  //       case h :: Nil => h :: revList
+  //       case h :: t   => _reverse(t, h :: revList)
+  //     }
+  //   _reverse(list, List())
+  // }
 
   def isPalindrome(list: List[Int]): Boolean =
     list == reverse(list)
+    // list == reverse(list)
 
   def flatten(nested: List[Any]): List[Any] =
-    nested.flatMap {
-      case l: List[Any] => flatten(l)
-      case v            => List(v)
-    }
+    ???
+    // nested.flatMap {
+    //   case l: List[Any] => flatten(l)
+    //   case v            => List(v)
+    // }
 
-  def compress(list: List[Symbol]): List[Symbol] = {
-    def _compress(_list: List[Symbol], prev: Symbol, retList: List[Symbol]): List[Symbol] =
-      _list match {
-        case Nil      => throw new Exception
-        case h :: Nil => retList
-        case h :: t =>
-          if (h == prev) {
-            _compress(t, h, retList)
-          } else {
-            _compress(t, h, retList ::: List(h))
-          }
-      }
-    _compress(list, null, List())
-  }
+  def compress(list: List[Symbol]): List[Symbol] = 
+    ???
+  //   def _compress(_list: List[Symbol], prev: Symbol, retList: List[Symbol]): List[Symbol] =
+  //     _list match {
+  //       case Nil      => throw new Exception
+  //       case h :: Nil => retList
+  //       case h :: t =>
+  //         if (h == prev) {
+  //           _compress(t, h, retList)
+  //         } else {
+  //           _compress(t, h, retList ::: List(h))
+  //         }
+  //     }
+  //   _compress(list, null, List())
+  // }
 
-  def pack(list: List[Symbol]): List[List[Symbol]] = {
-    def _pack[A](result: List[List[A]], tempList: List[A], _ls: List[A]): List[List[A]] =
-      (tempList, _ls) match {
-        case (_, Nil)      => result :+ tempList
-        case (Nil, h :: t) => _pack(result, List(h), t)
-        case (tempH :: tempT, h :: t) if tempH == h =>
-          _pack(result, tempList :+ h, t)
-        case (tempH :: tempT, h :: t) if tempH != h =>
-          _pack(result :+ tempList, List(h), t)
-      }
-    _pack(Nil, Nil, list)
-  }
+  def pack(list: List[Symbol]): List[List[Symbol]] = 
+    ???
+  //   def _pack[A](result: List[List[A]], tempList: List[A], _ls: List[A]): List[List[A]] =
+  //     (tempList, _ls) match {
+  //       case (_, Nil)      => result :+ tempList
+  //       case (Nil, h :: t) => _pack(result, List(h), t)
+  //       case (tempH :: tempT, h :: t) if tempH == h =>
+  //         _pack(result, tempList :+ h, t)
+  //       case (tempH :: tempT, h :: t) if tempH != h =>
+  //         _pack(result :+ tempList, List(h), t)
+  //     }
+  //   _pack(Nil, Nil, list)
+  // }
 
   def encode(list: List[Symbol]): List[(Int, Symbol)] =
     ???
